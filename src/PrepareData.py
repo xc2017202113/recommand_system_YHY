@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import copy
 class Dataset(object):
     def __init__(self,inputfile):
 
@@ -82,54 +83,57 @@ class Dataset(object):
 
         self.usernum = len(self.user2trainsaction_list)
         #print(self.user2trainsaction_list)
+
+    #[userid,target_item,price,[now_basket],[itemset]]
     def get_traindataset(self):
         users_list = list(range(250))
         random.shuffle(users_list) #make the users_list unorder
         users_list = np.array(users_list)
+        #print(self.user2trainsaction_list[0][0])
         return_list = []
-        return_items_list = []
-        return_user_id_list = []
-        for index,userid in enumerate(users_list):
+        label_list = []
+        for user in users_list:
+            #print(user)
+            for index,trip in enumerate(self.user2trainsaction_list[user]):
+                now_basket = []
+                for items in trip:
+                    target_item = items[0]
+                    price = items[1]
+                    basket = self.make_basket(now_basket,target_item)
+                    return_list.append([user,target_item,price,now_basket,basket])
+                    label_list.append(1.0)
 
-            if index % self.batchsize == 0:
-                return_list.append([])
-                return_items_list.append ([])
-                return_user_id_list.append([])
+                    #make neg_samples:
+                    for neg_sample in basket:
+                        if neg_sample not in now_basket and neg_sample != target_item:
+                            return_list.append([user,neg_sample,self.item2price[neg_sample],now_basket,basket])
+                            label_list.append(0.0)
 
-            return_list[int(index/self.batchsize)].append(self.user2trainsaction_list[userid])
-            return_user_id_list[int(index/self.batchsize)].append(userid)
-            userid2itemset = []
-            for index2,trips in enumerate(self.user2trainsaction_list[userid]):
-                for items_price in trips:
-                    if items_price[0] not in userid2itemset:
-                        userid2itemset.append(items_price[0])
-
-                    if len(userid2itemset) >= self.basketnum:
-                        userid2itemset = userid2itemset[0:self.basketnum]
-                    else:
-                        for i in range(len(userid2itemset),self.basketnum):
-                            randomset =  int(random.randint(0,len(self.itemset)-1))
-                            # print(randomset)
-                            # print(userid2itemset)
-                            # print(self.itemset)
-                            while randomset in userid2itemset:#find other items not in the basket
-                                randomset = int(random.randint (0, len (self.itemset)-1))
-                            userid2itemset.append(randomset)
+        #print(len(return_list))
+        return return_list,label_list
 
 
-            return_items_list[int(index/self.batchsize)].append(userid2itemset)
+    def make_basket(self,now_basket,target_item):
+        #item = self.itemnum
+        basket = copy.copy(now_basket)
+        basket.append(target_item)
+        #print(basket)
+        for i in range(self.basketnum-len(basket)):
+            #print(i)
+            j = np.random.randint(0,self.itemnum)
 
+            while j in basket:
+                j = np.random.randint (0, self.itemnum)
+            basket.append(j)
 
-
-        return_list = np.array(return_list)
-        return_items_list = np.array(return_items_list)
-        return_user_id_list = np.array(return_user_id_list)
-        # print(return_list[0][0][0])
-        # print(return_user_id_list[0])
-        # exit(0)
-        return return_list,return_items_list,return_user_id_list
+        return basket
 
 
 
-#test_dataset = Dataset("data/train.tsv")
-#print(len(test_dataset.get_traindataset()))
+
+
+
+
+# test_dataset = Dataset("data/train.tsv")
+# #print(len(test_dataset.get_traindataset()))
+# test_dataset.get_traindataset()
