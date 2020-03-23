@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b91dd5c-e225-42e7-8b07-c69323662f34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="true" current-in-tab="true">
-        <entry file="remoteDeploymentFS://&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/train.py">
+        <entry file="remoteDeploymentFS://&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src-gpu/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+            <state relative-caret-position="27">
+              <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -28,22 +27,10 @@
         </entry>
       </file>
       <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/PrepareData.py">
+        <entry file="remoteDeploymentFS://&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src-gpu/Model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="111" column="20" lean-forward="true" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/Model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="151">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -80,13 +67,15 @@
         <option value="&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/PrepareData.py" />
         <option value="&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/Model.py" />
         <option value="&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src/train.py" />
+        <option value="&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src-gpu/Model.py" />
+        <option value="&lt;13ff3b10-3812-47df-9db2-b1c6802a38e9&gt;/YHY_system/DL_src-gpu/train.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="231" />
-    <option name="width" value="1678" />
-    <option name="height" value="1038" />
+    <option name="x" value="230" />
+    <option name="width" value="1680" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -160,17 +149,19 @@
       <workItem from="1584764371926" duration="12207000" />
       <workItem from="1584797763787" duration="1043000" />
       <workItem from="1584804732543" duration="193000" />
-      <workItem from="1584865968326" duration="20442000" />
+      <workItem from="1584865968326" duration="20935000" />
+      <workItem from="1584940313556" duration="30000" />
+      <workItem from="1584940793956" duration="3687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71203000" />
+    <option name="totallyTimeSpent" value="75413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1261745" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12885906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -183,15 +174,15 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.93154365" visible="true" weight="0.47863248" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.068456374" side_tool="true" visible="true" weight="0.47863248" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.93154365" visible="true" weight="0.46723646" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.068456374" side_tool="true" weight="0.25641027" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Remote Host" order="5" visible="true" weight="0.12885906" />
+      <window_info anchor="right" id="Remote Host" order="5" visible="true" weight="0.21140939" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18120806" />

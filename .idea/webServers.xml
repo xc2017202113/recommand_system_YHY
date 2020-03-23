@@ -10,6 +10,14 @@
           <option name="port" value="5102" />
         </fileTransfer>
       </webServer>
+      <webServer id="1008512c-4be0-4ec3-9e40-60cffd0bec4d" name="110" url="http://183.174.228.110">
+        <fileTransfer host="183.174.228.110" port="5102" rootFolder="/home/chen_xu" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="5102" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
