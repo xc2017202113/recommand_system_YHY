@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="13ff3b10-3812-47df-9db2-b1c6802a38e9" name="109" url="http://183.174.228.109">
+        <fileTransfer host="183.174.228.109" port="5102" rootFolder="/home/chen_xu" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="5102" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

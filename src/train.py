@@ -15,17 +15,13 @@ def train(inputfile):
 
     print("item:num:{},user_num:{}".format(item_num,user_num))
     model = My_model(item_num,user_num,item2price_dict)
-    paras = [model.alpha_c_mu,model.alpha_c_sigma,model.rho_c_mu,model.rho_c_sigma,model.lambda_c_mu,
-             model.lambda_c_sigma,
-             model.beta_c_mu,model.beta_c_sigma,model.mu_c_mu,
-             model.mu_c_sigma,model.theta_u_mu,model.theta_u_sigma,model.gamma_u_mu,model.gamma_u_sigma]
 
     epoch = 1000
     lr = 1e-3
 
     # for i in model.parameters():
     #     print(i)
-    optimizer = torch.optim.Adam(paras,lr=lr)
+    optimizer = torch.optim.Adam(model.parameters(),lr=lr)
     train_loss_list = []
     all_dataset,labels = dataset.get_traindataset()
 
@@ -47,7 +43,7 @@ def train(inputfile):
 
             output = torch.sigmoid(model(train_dataset[j]))
             #print(output.type())
-            if index % 256 == 0 and index > 100:
+            if index % 10 == 0 and index > 100:
                 print("batch: %d loss: %.2f"%(index,np.mean(train_loss_list)))
 
                 #train_loss += crossentropyloss(output,train_labels[j])
@@ -75,8 +71,6 @@ def train(inputfile):
 
             if index % batch_size == 0:
                 train_loss = torch.tensor ([0.0])
-
-                model.sample_vec()
 
         #valid:
         hit = 0.0
